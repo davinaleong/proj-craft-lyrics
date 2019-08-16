@@ -5,9 +5,9 @@
 {% block content %}
 
     {% if globals.landingBackground %}
-    <section data-background="{{ globals.landingBackground.one.getUrl }}">
+        <section data-background="{{ globals.landingBackground.one.getUrl }}">
     {% else %}
-    <section>
+        <section>
     {% endif %}
         <h1>{{ globals.heading ? globals.heading : 'Craft Lyrics' }}</h1>
         {% if globals.subHeading %}
@@ -22,9 +22,9 @@
     </section>
 
     {% if globals.selectionBackground %}
-    <section data-background="{{ globals.selectionBackground.one.getUrl }}">
+        <section data-background="{{ globals.selectionBackground.one.getUrl }}">
     {% else %}
-    <section>
+        <section>
     {% endif %}
         <h2>Songs</h2>
         <ul>
@@ -38,11 +38,13 @@
 
     {% for song in songs %}
         {% if song.selected %}
+            {% set titleBackground = song.titleBackground %}
+            {% set lyricsBackground = song.lyricsBackground %}
             <section>
-                {% if song.titleBackground.one %}
-                <section data-background="{{ song.titleBackground.one.getUrl }}">
+                {% if titleBackground.one %}
+                    <section data-background="{{ titleBackground.one.getUrl }}">
                 {% else %}
-                <section>
+                    <section>
                 {% endif %}
                     <h2>{{ song.title }}</h2>
                     {% set artist = song.artist.one %}
@@ -50,18 +52,24 @@
                     <p>by {{ artist.title }}</p>
                     {% endif %}
                 </section>
-                <section>
+                {% if lyricsBackground.one %}
+                    <section data-background="{{ lyricsBackground.one.getUrl }}">
+                {% else %}
+                    <section>
+                {% endif %}
                     <h2>Basement Level 1</h2>
                     <p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
                 </section>
-                <section>
-                    <h2>Basement Level 2</h2>
-                    <p>That's it, time to go back up.</p>
-                    <br>
-                    <a href="#/2">
-                        <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-                    </a>
-                </section>
+                {% if song.copyrightLicense %}
+                    {% if lyricsBackground.one %}
+                        <section data-background="{{ lyricsBackground.one.getUrl }}">
+                    {% else %}
+                        <section>
+                    {% endif %}
+                        {{ song.copyrightLicense }}
+                    </section>
+                {% endif %}
+
             </section>
         {% endif %}
     {% endfor %}
