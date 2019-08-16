@@ -1,0 +1,32 @@
+email:
+  fromEmail: leong.shi.yun@gmail.com
+  fromName: 'Craft Lyrics'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  ad0a1114-70de-435f-b6de-88777d4235e4:
+    name: Common
+siteGroups:
+  91c81b4d-7dd3-4dd1-82fe-ece0ca8518f5:
+    name: 'Craft Lyrics'
+sites:
+  edf2f59c-3f24-402a-9203-e4296026583c:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en
+    name: 'Craft Lyrics'
+    primary: true
+    siteGroup: 91c81b4d-7dd3-4dd1-82fe-ece0ca8518f5
+    sortOrder: 1
+system:
+  edition: solo
+  name: 'Craft Lyrics'
+  live: true
+  schemaVersion: 3.2.16
+  timeZone: America/Los_Angeles
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''
