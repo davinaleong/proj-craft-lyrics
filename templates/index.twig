@@ -1,7 +1,12 @@
 {% extends '_layouts/base' %}
 
 {% block content %}
+
+    {% if globals.landingBackground %}
+    <section data-background="{{ globals.landingBackground.one.getUrl }}">
+    {% else %}
     <section>
+    {% endif %}
         <h1>{{ globals.heading ? globals.heading : 'Craft Lyrics' }}</h1>
         {% if globals.subHeading %}
         <h3>{{ globals.subHeading }}</h3>
@@ -14,11 +19,17 @@
         {% endif %}
     </section>
 
+    {% if globals.selectionBackground %}
+    <section data-background="{{ globals.selectionBackground.one.getUrl }}">
+    {% else %}
     <section>
-        <h2>Hello There</h2>
-        <p>
-            reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-        </p>
+    {% endif %}
+        <h2>Songs</h2>
+        <ul>
+            <li><a href="#">Song 1</a></li>
+            <li><a href="#">Song 2</a></li>
+            <li><a href="#">Song 3</a></li>
+        </ul>
     </section>
 
     <!-- Example of nested vertical slides -->
