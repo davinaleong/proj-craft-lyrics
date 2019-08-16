@@ -5,4 +5,4 @@ vendor/
 .composer/
 log/
 config/license.key
-web/uploads
+web/uploads/*
