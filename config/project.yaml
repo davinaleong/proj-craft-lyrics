@@ -1,4 +1,4 @@
-dateModified: 1565997318
+dateModified: 1565999453
 email:
   fromEmail: leong.shi.yun@gmail.com
   fromName: 'Craft Lyrics'
@@ -175,8 +175,8 @@ fields:
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
   5d749b1d-4443-4b96-8eac-107b14909001:
-    name: 'Show Song Title on Every Slide'
-    handle: showSongTitleOnEverySlide
+    name: 'Show Title on Every Slide'
+    handle: showTitleOnEverySlide
     instructions: ''
     searchable: true
     translationMethod: none
@@ -397,8 +397,8 @@ globalSets:
 matrixBlockTypes:
   1558abc4-446d-4227-adbc-04f3c9812a88:
     field: 038429f3-895c-4b5a-a949-17bc412855ca
-    name: Assets
-    handle: assets
+    name: Images
+    handle: images
     sortOrder: 3
     fields:
       b0680a1d-1ebf-4153-b0ca-4d09867d2aa5:
@@ -445,8 +445,8 @@ matrixBlockTypes:
     sortOrder: 2
     fields:
       64907051-16e5-4e8b-86a4-e4307dfd58fd:
-        name: Text
-        handle: text
+        name: 'Lyrics Content'
+        handle: lyricsContent
         instructions: ''
         searchable: true
         translationMethod: none
@@ -482,8 +482,8 @@ matrixBlockTypes:
     sortOrder: 1
     fields:
       a7b29855-3bba-44d3-9bc7-ae053bce770e:
-        name: Text
-        handle: text
+        name: 'Heading Content'
+        handle: headingContent
         instructions: ''
         searchable: true
         translationMethod: none
@@ -499,8 +499,8 @@ matrixBlockTypes:
         contentColumnType: text
         fieldGroup: null
       c2153f70-8c40-44aa-8f38-63637eb461c1:
-        name: Number
-        handle: number
+        name: 'Heading Level'
+        handle: headingLevel
         instructions: ''
         searchable: true
         translationMethod: none
