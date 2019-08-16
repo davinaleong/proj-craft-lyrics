@@ -1,4 +1,4 @@
-dateModified: 1565951954
+dateModified: 1565952863
 email:
   fromEmail: leong.shi.yun@gmail.com
   fromName: 'Craft Lyrics'
@@ -66,6 +66,23 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  25a66925-81db-4de5-8c35-739d31c717a3:
+    name: Tagline
+    handle: tagline
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
   56942ba7-16e0-46b4-a9df-9513469b96e4:
     name: Favicon
     handle: favicon
@@ -94,6 +111,40 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  d25313f6-d21e-4e23-b1ba-28ef0f3bdf15:
+    name: Heading
+    handle: heading
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  efb5cc63-9470-4fcd-b009-3820a909fc89:
+    name: 'Sub Heading'
+    handle: subHeading
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
 globalSets:
   8a742345-041f-46e8-8ce6-c2803e5a2d25:
     name: Globals
@@ -106,11 +157,20 @@ globalSets:
             sortOrder: 1
             fields:
               1bb183bd-4ebe-4a41-8380-0c2098bee689:
+                required: true
+                sortOrder: 5
+              25a66925-81db-4de5-8c35-739d31c717a3:
                 required: false
-                sortOrder: 2
+                sortOrder: 3
               56942ba7-16e0-46b4-a9df-9513469b96e4:
                 required: false
+                sortOrder: 4
+              d25313f6-d21e-4e23-b1ba-28ef0f3bdf15:
+                required: false
                 sortOrder: 1
+              efb5cc63-9470-4fcd-b009-3820a909fc89:
+                required: false
+                sortOrder: 2
 siteGroups:
   91c81b4d-7dd3-4dd1-82fe-ece0ca8518f5:
     name: 'Craft Lyrics'
