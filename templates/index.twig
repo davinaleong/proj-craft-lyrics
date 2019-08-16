@@ -410,12 +410,12 @@ Reveal.addEventListener( 'customevent', function() {
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/highlight/highlight.js', async: true },
-            { src: 'plugin/search/search.js', async: true },
-            { src: 'plugin/zoom-js/zoom.js', async: true },
-            { src: 'plugin/notes/notes.js', async: true }
+            { src: '{{ siteUrl }}plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '{{ siteUrl }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '{{ siteUrl }}plugin/highlight/highlight.js', async: true },
+            { src: '{{ siteUrl }}plugin/search/search.js', async: true },
+            { src: '{{ siteUrl }}plugin/zoom-js/zoom.js', async: true },
+            { src: '{{ siteUrl }}plugin/notes/notes.js', async: true }
         ]
     });
 
