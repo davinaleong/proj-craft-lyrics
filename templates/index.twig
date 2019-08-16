@@ -1,5 +1,7 @@
 {% extends '_layouts/base' %}
 
+{% set songs = craft.entries.section('songs').order('title asc').all %}
+
 {% block content %}
 
     {% if globals.landingBackground %}
@@ -26,12 +28,43 @@
     {% endif %}
         <h2>Songs</h2>
         <ul>
-            <li><a href="#">Song 1</a></li>
-            <li><a href="#">Song 2</a></li>
-            <li><a href="#">Song 3</a></li>
+            {% for song in songs %}
+                {% if song.selected %}
+                <li>{{ song.title }}</li>
+                {% endif %}
+            {% endfor %}
         </ul>
     </section>
 
+    {% for song in songs %}
+        {% if song.selected %}
+            <section>
+                {% if song.titleBackground.one %}
+                <section data-background="{{ song.titleBackground.one.getUrl }}">
+                {% else %}
+                <section>
+                {% endif %}
+                    <h2>{{ song.title }}</h2>
+                    {% set artist = song.artist.one %}
+                    {% if artist %}
+                    <p>by {{ artist.title }}</p>
+                    {% endif %}
+                </section>
+                <section>
+                    <h2>Basement Level 1</h2>
+                    <p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+                </section>
+                <section>
+                    <h2>Basement Level 2</h2>
+                    <p>That's it, time to go back up.</p>
+                    <br>
+                    <a href="#/2">
+                        <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+                    </a>
+                </section>
+            </section>
+        {% endif %}
+    {% endfor %}
     <!-- Example of nested vertical slides -->
     <section>
         <section>
