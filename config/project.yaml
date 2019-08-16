@@ -1,4 +1,4 @@
-dateModified: 1565952863
+dateModified: 1565993933
 email:
   fromEmail: leong.shi.yun@gmail.com
   fromName: 'Craft Lyrics'
@@ -111,6 +111,60 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  5ca3318e-7a9c-4396-a74b-61f96b927c1c:
+    name: 'Selection Background'
+    handle: selectionBackground
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Select a background image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  72adcfcd-4ae7-4422-a9f1-775e49d1cdb6:
+    name: 'Landing Background'
+    handle: landingBackground
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Select a background image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
   d25313f6-d21e-4e23-b1ba-28ef0f3bdf15:
     name: Heading
     handle: heading
@@ -153,22 +207,32 @@ globalSets:
       b8c43733-8e22-489d-9c28-e5480f9b25e9:
         tabs:
           -
-            name: Globals
+            name: Settings
             sortOrder: 1
             fields:
               1bb183bd-4ebe-4a41-8380-0c2098bee689:
                 required: true
-                sortOrder: 5
+                sortOrder: 4
               25a66925-81db-4de5-8c35-739d31c717a3:
                 required: false
                 sortOrder: 3
-              56942ba7-16e0-46b4-a9df-9513469b96e4:
-                required: false
-                sortOrder: 4
               d25313f6-d21e-4e23-b1ba-28ef0f3bdf15:
                 required: false
                 sortOrder: 1
               efb5cc63-9470-4fcd-b009-3820a909fc89:
+                required: false
+                sortOrder: 2
+          -
+            name: Media
+            sortOrder: 2
+            fields:
+              56942ba7-16e0-46b4-a9df-9513469b96e4:
+                required: false
+                sortOrder: 1
+              5ca3318e-7a9c-4396-a74b-61f96b927c1c:
+                required: false
+                sortOrder: 3
+              72adcfcd-4ae7-4422-a9f1-775e49d1cdb6:
                 required: false
                 sortOrder: 2
 siteGroups:
