@@ -1,14 +1,50 @@
-dateModified: 1565993933
+dateModified: 1565999453
 email:
   fromEmail: leong.shi.yun@gmail.com
   fromName: 'Craft Lyrics'
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  5debe502-cb45-409c-815c-ce01cff4d47f:
+    name: Songs
   a1a22de2-f817-4935-ab69-e9c381cb95ca:
     name: Globals
-  ad0a1114-70de-435f-b6de-88777d4235e4:
-    name: Common
 fields:
+  038429f3-895c-4b5a-a949-17bc412855ca:
+    name: 'Slide Content'
+    handle: slideContent
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_slidecontent}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
+  09fa0c37-2dab-4468-8632-fa6c271daf8f:
+    name: 'Copyright & License'
+    handle: copyrightLicense
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Simple.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
   1bb183bd-4ebe-4a41-8380-0c2098bee689:
     name: Theme
     handle: theme
@@ -138,6 +174,18 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  5d749b1d-4443-4b96-8eac-107b14909001:
+    name: 'Show Title on Every Slide'
+    handle: showTitleOnEverySlide
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
   72adcfcd-4ae7-4422-a9f1-775e49d1cdb6:
     name: 'Landing Background'
     handle: landingBackground
@@ -165,6 +213,45 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  a730f392-b7c7-46f3-b319-b401256a63e0:
+    name: Selected
+    handle: selected
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
+  bfab2ec8-e4f6-4ff3-85b1-33ade66ec6d0:
+    name: 'Lyrics Background'
+    handle: lyricsBackground
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Select a background image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
   d25313f6-d21e-4e23-b1ba-28ef0f3bdf15:
     name: Heading
     handle: heading
@@ -182,6 +269,53 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  e28bef51-abbf-494d-b3d1-074cc65460e4:
+    name: 'Title Background'
+    handle: titleBackground
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Select a background image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
+  e874f853-4ee8-4dc6-9f36-b27212268481:
+    name: Artist
+    handle: artist
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:b817892d-2714-4b7c-bbb0-01e98362290d'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: 'Select an Artist'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
   efb5cc63-9470-4fcd-b009-3820a909fc89:
     name: 'Sub Heading'
     handle: subHeading
@@ -199,6 +333,31 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: a1a22de2-f817-4935-ab69-e9c381cb95ca
+  faf7bc1c-71c9-45a4-8e98-d5383a37bda7:
+    name: 'Content Alignment'
+    handle: contentAlignment
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      optgroups: true
+      options:
+        -
+          label: Left
+          value: left
+          default: '1'
+        -
+          label: Center
+          value: center
+          default: ''
+        -
+          label: Right
+          value: right
+          default: ''
+    contentColumnType: string
+    fieldGroup: 5debe502-cb45-409c-815c-ce01cff4d47f
 globalSets:
   8a742345-041f-46e8-8ce6-c2803e5a2d25:
     name: Globals
@@ -235,6 +394,241 @@ globalSets:
               72adcfcd-4ae7-4422-a9f1-775e49d1cdb6:
                 required: false
                 sortOrder: 2
+matrixBlockTypes:
+  1558abc4-446d-4227-adbc-04f3c9812a88:
+    field: 038429f3-895c-4b5a-a949-17bc412855ca
+    name: Images
+    handle: images
+    sortOrder: 3
+    fields:
+      b0680a1d-1ebf-4153-b0ca-4d09867d2aa5:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:a72bd4a1-090a-49b9-9cba-d1b9452e0c80'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Select an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      441d233b-0549-48b8-82fc-84740efb3576:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              b0680a1d-1ebf-4153-b0ca-4d09867d2aa5:
+                required: false
+                sortOrder: 1
+  1cc4b230-7b73-41b1-8802-806b839c2c32:
+    field: 038429f3-895c-4b5a-a949-17bc412855ca
+    name: Lyrics
+    handle: lyrics
+    sortOrder: 2
+    fields:
+      64907051-16e5-4e8b-86a4-e4307dfd58fd:
+        name: 'Lyrics Content'
+        handle: lyricsContent
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      b434130a-37a0-4e70-b5c1-f7d731bf153d:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              64907051-16e5-4e8b-86a4-e4307dfd58fd:
+                required: false
+                sortOrder: 1
+  7350c8dc-3a95-4bb6-b8d4-29150687422b:
+    field: 038429f3-895c-4b5a-a949-17bc412855ca
+    name: Heading
+    handle: heading
+    sortOrder: 1
+    fields:
+      a7b29855-3bba-44d3-9bc7-ae053bce770e:
+        name: 'Heading Content'
+        handle: headingContent
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c2153f70-8c40-44aa-8f38-63637eb461c1:
+        name: 'Heading Level'
+        handle: headingLevel
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: H1
+              value: h1
+              default: ''
+            -
+              label: H2
+              value: h2
+              default: ''
+            -
+              label: H3
+              value: h3
+              default: ''
+            -
+              label: H4
+              value: h4
+              default: ''
+            -
+              label: H5
+              value: h5
+              default: ''
+            -
+              label: H6
+              value: h6
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      4aed211b-59f8-4d88-92d3-9cf4561502f5:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              a7b29855-3bba-44d3-9bc7-ae053bce770e:
+                required: false
+                sortOrder: 2
+              c2153f70-8c40-44aa-8f38-63637eb461c1:
+                required: false
+                sortOrder: 1
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+sections:
+  6e26e531-a565-414e-a789-2e17cc929e4a:
+    name: Songs
+    handle: songs
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      edf2f59c-3f24-402a-9203-e4296026583c:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: null
+        template: null
+    entryTypes:
+      5f7d24fe-6e6f-49f7-8680-12280ebf3409:
+        name: Songs
+        handle: songs
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          2e33ada1-e538-430e-a3ad-b7b6bc3e01c0:
+            tabs:
+              -
+                name: Settings
+                sortOrder: 1
+                fields:
+                  038429f3-895c-4b5a-a949-17bc412855ca:
+                    required: false
+                    sortOrder: 3
+                  09fa0c37-2dab-4468-8632-fa6c271daf8f:
+                    required: false
+                    sortOrder: 6
+                  5d749b1d-4443-4b96-8eac-107b14909001:
+                    required: false
+                    sortOrder: 5
+                  a730f392-b7c7-46f3-b319-b401256a63e0:
+                    required: false
+                    sortOrder: 4
+                  e874f853-4ee8-4dc6-9f36-b27212268481:
+                    required: false
+                    sortOrder: 1
+                  faf7bc1c-71c9-45a4-8e98-d5383a37bda7:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Media
+                sortOrder: 2
+                fields:
+                  bfab2ec8-e4f6-4ff3-85b1-33ade66ec6d0:
+                    required: false
+                    sortOrder: 2
+                  e28bef51-abbf-494d-b3d1-074cc65460e4:
+                    required: false
+                    sortOrder: 1
+  b817892d-2714-4b7c-bbb0-01e98362290d:
+    name: Artists
+    handle: artists
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      edf2f59c-3f24-402a-9203-e4296026583c:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: null
+        template: null
+    entryTypes:
+      cc7fa3e3-7611-4c74-906c-73c0f1a0611d:
+        name: Artists
+        handle: artists
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: 1
 siteGroups:
   91c81b4d-7dd3-4dd1-82fe-ece0ca8518f5:
     name: 'Craft Lyrics'
