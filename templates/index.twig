@@ -4,12 +4,12 @@
 
 {% block content %}
 
-    {% if globals.landingBackground %}
+    {% if globals.landingBackground.one %}
         <section data-background="{{ globals.landingBackground.one.getUrl }}">
     {% else %}
         <section>
     {% endif %}
-        <h1>{{ globals.heading ? globals.heading : 'Craft Lyrics' }}</h1>
+        <h1>{{ globals.heading ? globals.heading : siteName }}</h1>
         {% if globals.subHeading %}
         <h3>{{ globals.subHeading }}</h3>
         {% endif %}
@@ -21,7 +21,7 @@
         {% endif %}
     </section>
 
-    {% if globals.selectionBackground %}
+    {% if globals.selectionBackground.one %}
         <section data-background="{{ globals.selectionBackground.one.getUrl }}">
     {% else %}
         <section>
@@ -36,69 +36,71 @@
         </ul>
     </section>
 
-    {% for song in songs %}
-        {% if song.selected %}
-            {% set titleBackground = song.titleBackground %}
-            {% set lyricsBackground = song.lyricsBackground %}
-            <section>
-                {% if titleBackground.one %}
-                    <section data-background="{{ titleBackground.one.getUrl }}">
+    {% if songs %}
+        {% for song in songs %}
+            {% if song.selected %}
+                {% set titleBackground = song.titleBackground %}
+                {% set lyricsBackground = song.lyricsBackground %}
+                <section>
+                    {% if titleBackground.one %}
+                        <section data-background="{{ titleBackground.one.getUrl }}">
+                    {% else %}
+                        <section>
+                    {% endif %}
+                        <h2>{{ song.title }}</h2>
+                        {% set artist = song.artist.one %}
+                        {% if artist %}
+                        <p>by {{ artist.title }}</p>
+                        {% endif %}
+                    </section>
+                    {% for block in song.slideContent.all %}
+                        {% if lyricsBackground.one %}
+                            <section data-background="{{ lyricsBackground.one.getUrl }}">
+                        {% else %}
+                            <section>
+                        {% endif %}
+                            {% if song.showTitleOnEverySlide %}
+                                <h6 style="text-align: right">{{ song.title }}</h6>
+                            {% endif %}
+
+                            {% switch block.type %}
+                                {% case 'heading' %}
+                                    <{{ block.headingLevel.value }}>{{ block.headingContent }}</{{ block.headingLevel.value }}>
+
+                                {% case 'lyrics' %}
+                                    {{ block.lyricsContent }}
+
+                                {% case 'images' %}
+                                    <img src="{{ block.image.one.getUrl }}" alt="{{ song.title }}">
+
+                            {% endswitch %}
+
+                        </section>
+                    {% endfor %}
+                    {% if song.copyrightLicense %}
+                        {% if lyricsBackground.one %}
+                            <section data-background="{{ lyricsBackground.one.getUrl }}">
+                        {% else %}
+                            <section>
+                        {% endif %}
+                            {{ song.copyrightLicense }}
+                        </section>
+                    {% endif %}
+
+                {% if lyricsBackground.one %}
+                    <section data-background="{{ lyricsBackground.one.getUrl }}">
                 {% else %}
                     <section>
                 {% endif %}
-                    <h2>{{ song.title }}</h2>
-                    {% set artist = song.artist.one %}
-                    {% if artist %}
-                    <p>by {{ artist.title }}</p>
-                    {% endif %}
+                        <h2>- End of song -</h2>
+                        <p>
+                            <a href="#/1">Back to song selection</a>.
+                        </p>
+                    </section>
+
                 </section>
-                {% for block in song.slideContent.all %}
-                    {% if lyricsBackground.one %}
-                        <section data-background="{{ lyricsBackground.one.getUrl }}">
-                    {% else %}
-                        <section>
-                    {% endif %}
-                        {% if song.showTitleOnEverySlide %}
-                            <h6 style="text-align: right">{{ song.title }}</h6>
-                        {% endif %}
-
-                        {% switch block.type %}
-                            {% case 'heading' %}
-                                <{{ block.headingLevel.value }}>{{ block.headingContent }}</{{ block.headingLevel.value }}>
-
-                            {% case 'lyrics' %}
-                                {{ block.lyricsContent }}
-
-                            {% case 'images' %}
-                                <img src="{{ block.image.one.getUrl }}" alt="{{ song.title }}">
-
-                        {% endswitch %}
-
-                    </section>
-                {% endfor %}
-                {% if song.copyrightLicense %}
-                    {% if lyricsBackground.one %}
-                        <section data-background="{{ lyricsBackground.one.getUrl }}">
-                    {% else %}
-                        <section>
-                    {% endif %}
-                        {{ song.copyrightLicense }}
-                    </section>
-                {% endif %}
-
-            {% if lyricsBackground.one %}
-                <section data-background="{{ lyricsBackground.one.getUrl }}">
-            {% else %}
-                <section>
             {% endif %}
-                    <h2>- End of song -</h2>
-                    <p>
-                        <a href="#/1">Back to song selection</a>.
-                    </p>
-                </section>
-
-            </section>
-        {% endif %}
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 
 {% endblock %}
